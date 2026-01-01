@@ -41,6 +41,7 @@
   align-items: center;
   justify-content: space-between;
   z-index: 1;
+  gap: 40px;
 }
 
 /* --- Left Side Content --- */
@@ -274,18 +275,36 @@
   .hero-container {
     flex-direction: column;
     text-align: center;
+    padding: 0 20px;
+    gap: 30px;
   }
   .hero-content {
     max-width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+  }
+
+  .hero-headline {
+    font-size: 48px;
+  }
+
+  .script-text {
+    font-size: 56px;
   }
 
   .growth-badge {
     margin: 0 auto 20px auto; 
   }
 
+  .growth-text {
+    font-size: 18px;
+  }
+
   .partners-label, .partners-logos {
     justify-content: center;
+  }
+
+  .hero-visuals {
+    height: 500px;
   }
 
   .big-circle-container {
@@ -310,11 +329,151 @@
   .partners-logos {
     gap: 20px;
     justify-content: center;
+    flex-wrap: wrap;
   }
 
   .partner-logo {
     max-height: 35px;
     max-width: 120px;
+  }
+}
+
+/* Small tablets and larger phones */
+@media (max-width: 768px) {
+  .hero-container {
+    padding: 0 16px;
+  }
+
+  .hero-headline {
+    font-size: 42px;
+  }
+
+  .script-text {
+    font-size: 48px;
+    margin: 0 3px;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+  }
+
+  .big-circle-container {
+    width: 380px;
+    height: 380px;
+  }
+  .inner-solid-circle { 
+    width: 270px; 
+    height: 270px; 
+  }
+  .outer-faded-ring { 
+    width: 380px; 
+    height: 380px; 
+  }
+  .zxam-logo {
+    max-width: 240px;
+    max-height: 240px;
+  }
+
+  .hero-visuals {
+    height: 400px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .hero-section {
+    min-height: 100vh;
+  }
+
+  .hero-container {
+    padding: 0 12px;
+    gap: 20px;
+  }
+
+  .hero-content {
+    margin-bottom: 20px;
+  }
+
+  .hero-headline {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+
+  .script-text {
+    font-size: 36px;
+    margin: 0 2px;
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+    margin-bottom: 25px;
+  }
+
+  .btn-hero-services {
+    padding: 10px 28px;
+    font-size: 14px;
+  }
+
+  .growth-badge {
+    padding: 8px 14px;
+    margin-bottom: 15px;
+  }
+
+  .growth-text {
+    font-size: 16px;
+  }
+
+  .growth-icon {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  .hero-partners {
+    margin-top: 40px;
+  }
+
+  .partners-label {
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  .partners-label span {
+    font-size: 12px;
+  }
+
+  .partners-line {
+    width: 40px;
+  }
+
+  .partners-logos {
+    gap: 15px;
+    height: auto;
+  }
+
+  .partner-logo {
+    max-height: 30px;
+    max-width: 90px;
+  }
+
+  .big-circle-container {
+    width: 280px;
+    height: 280px;
+  }
+  .inner-solid-circle { 
+    width: 200px; 
+    height: 200px; 
+  }
+  .outer-faded-ring { 
+    width: 280px; 
+    height: 280px; 
+  }
+  .zxam-logo {
+    max-width: 180px;
+    max-height: 180px;
+  }
+
+  .hero-visuals {
+    height: 320px;
   }
 }
 
