@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap');
+
+/* --- Main Container --- */
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  padding: 10px 40px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eaeaea;
+  font-family: 'Outfit', sans-serif;
+  height: 80px;
+  z-index: 1000; /* Stays on top of hero section */
+}
+
+/* --- Left Side: Logo & Brand --- */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  z-index: 1002; /* Ensures logo is above mobile menu background */
+}
+
+.logo-box {
+  width: 60px;
+  height: 60px;
+  background-color: #D9D9D9;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; 
+  flex-shrink: 0;
+}
+
+.logo-image {
+  width: 85%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.brand-name {
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+  white-space: nowrap;
+}
+.brand-blue {
+  color: #003366;
+  font-weight: 700;
+}
+
+/* --- Hamburger Button (Hidden on Desktop) --- */
+.hamburger-btn {
+  display: none; /* Hidden by default */
+  cursor: pointer;
+  z-index: 1002; /* Above the menu */
+}
+
+/* --- Navigation Links (Desktop) --- */
+.navbar-links {
+  position: absolute; 
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: #555;
+  font-size: 18px;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.nav-icon {
+  width: 18px;
+  height: 18px;
+  opacity: 0.6;
+}
+
+/* Active State */
+.nav-item.active a {
+  color: #003366;
+  font-weight: 700;
+}
+.nav-item.active .nav-icon {
+  opacity: 1;
+  filter: brightness(0) saturate(100%) invert(16%) sepia(38%) saturate(3620%) hue-rotate(200deg) brightness(96%) contrast(104%);
+}
+
+/* --- MOBILE RESPONSIVENESS (Max Width 900px) --- */
+@media (max-width: 900px) {
+  .navbar {
+    padding: 10px 20px;
+    justify-content: space-between;
+  }
+  
+  /* Show the Hamburger */
+  .hamburger-btn {
+    display: block;
+  }
+
+  /* Reset the Absolute Positioning for Mobile */
+  .navbar-links {
+    display: none; /* Hidden when closed */
+    position: absolute;
+    top: 80px; /* Push below the navbar height */
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    gap: 0;
+    transform: none;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-top: 1px solid #f0f0f0;
+    padding: 20px 0;
+  }
+
+  /* When the 'mobile-open' class is added via React State */
+  .navbar-links.mobile-open {
+    display: flex; /* Show flexbox when open */
+    animation: slideDown 0.3s ease forwards;
+  }
+
+  .nav-item {
+    width: 100%;
+    justify-content: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #f9f9f9;
+  }
+
+  .nav-item a {
+    font-size: 20px; /* Bigger text for mobile tapping */
+  }
+
+  .nav-icon {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* Animation for smooth opening */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

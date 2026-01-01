@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Sail&display=swap');
+
+/* --- Section Container --- */
+.team-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffffff 0%, #f0f7fc 100%);
+  overflow: hidden;
+  font-family: 'Outfit', sans-serif;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* --- Perspective Background Grid --- */
+.team-bg-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(0, 51, 102, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 51, 102, 0.05) 1px, transparent 1px);
+  background-size: 80px 80px;
+  transform: perspective(1000px) rotateX(25deg) translateY(-50px) scale(1.2);
+  transform-origin: top center;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* --- Decorative Circles --- */
+.team-deco-circle {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Position 1: Top Left (From Image 1) */
+.team-deco-circle.top-left {
+  top: -200px;
+  left: -200px;
+}
+
+/* Position 2: Bottom Left (From Image 2) */
+.team-deco-circle.bottom-left {
+  bottom: -250px;
+  left: -250px;
+}
+
+.blue-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 80px solid #3b82f6;
+  opacity: 0.8;
+}
+
+.blue-fill {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 70%;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 50%;
+}
+
+/* --- Main Content Wrapper --- */
+.team-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- Header --- */
+.team-header {
+  text-align: center;
+  max-width: 800px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-label {
+  background-color: #DAE6F2;
+  color: #003366;
+  font-weight: 700;
+  padding: 8px 24px;
+  border-radius: 6px;
+  border: 2px solid #003366;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+  font-size: 25px;
+}
+
+.team-title {
+  font-size: 56px;
+  color: #000;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.script-text {
+  font-family: 'Sail', cursive;
+  color: #003366;
+  font-weight: 400;
+  font-size: 68px;
+  margin-left: 10px;
+}
+
+.team-description {
+  font-size: 18px;
+  color: #666;
+  line-height: 1.6;
+  max-width: 700px;
+}
+
+/* --- Rows Layout --- */
+.team-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  width: 100%;
+  position: relative;
+}
+
+.spacer-top {
+  margin-top: 60px; /* Space between the two rows */
+}
+
+/* --- Vertical Divider --- */
+.vertical-divider {
+  width: 3px;
+  height: 420px; /* Matches the card height roughly */
+  background-color: #003366;
+  opacity: 0.8;
+  margin-top: 50px;
+  border-radius: 2px;
+}
+
+/* --- Card Styling --- */
+.expert-card {
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-frame {
+  width: 100%;
+  height: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  margin-bottom: -30px; /* Overlap effect */
+  position: relative;
+  z-index: 1;
+}
+
+.image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.text-frame {
+  background: rgba(218, 230, 242, 0.7); /* The exact greyish-blue from image */
+  backdrop-filter: blur(10px);
+  border: 1px solid #99aab5;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.expert-role {
+  color: #003366;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.expert-bio {
+  font-size: 13px; /* Slightly smaller to fit text */
+  color: #444;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.expert-bio strong {
+  color: #000;
+  font-weight: 700;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .team-title { font-size: 42px; }
+  
+  .team-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .vertical-divider {
+    width: 80%;
+    height: 2px; /* Horizontal line on mobile */
+    margin: 10px 0;
+  }
+}

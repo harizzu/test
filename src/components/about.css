@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Sail&display=swap');
+
+/* --- Section Container --- */
+.about-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  /* Light Blue Gradient Background */
+  background: linear-gradient(135deg, #ffffff 0%, #f0f7fc 100%);
+  overflow: hidden;
+  font-family: 'Outfit', sans-serif;
+  padding: 60px 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* --- FIX: The Vector Grid (Now Tilted correctly) --- */
+.about-bg-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%; /* Taller to cover the tilt gap */
+  background-image: 
+    linear-gradient(rgba(0, 51, 102, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 51, 102, 0.05) 1px, transparent 1px);
+  background-size: 80px 80px;
+  
+  /* This creates the 3D 'Floor' look matching the design */
+  transform: perspective(600px) rotateX(25deg) translateY(-50px) scale(1.2);
+  transform-origin: top center;
+  
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* --- FIX: The Top Right Circle (Blue Ring) --- */
+.deco-circle-group {
+  position: absolute;
+  top: -200px;  /* Pulls it up into the corner */
+  right: -200px; /* Pulls it right into the corner */
+  width: 700px;
+  height: 700px;
+  pointer-events: none;
+  z-index: 1; /* Ensures it sits above background but behind text */
+  opacity: 0.9;
+}
+
+.deco-circle {
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* The Thick Blue Ring */
+.deco-circle.outer {
+  width: 600px;
+  height: 600px;
+  border: 80px solid #3b82f6; /* Creates the ring shape */
+  background: transparent;    /* Empty center */
+  opacity: 0.8;
+}
+
+/* Optional Inner Glow/Fill if needed */
+.deco-circle.inner {
+  width: 440px; /* Fits inside the ring */
+  height: 440px;
+  background-color: rgba(59, 130, 246, 0.1); /* Very faint blue center */
+}
+
+/* --- Main Content Wrapper --- */
+.about-container {
+  position: relative;
+  z-index: 2; /* Sits on top of the circle */
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- Header Section --- */
+.about-header {
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.company-label {
+  background-color: #DAE6F2;
+  color: #003366;
+  font-weight: 700;
+  padding: 8px 24px;
+  border-radius: 6px;
+  border: 2px solid #003366;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+  font-size: 25px;
+}
+
+.about-title {
+  font-size: 56px;
+  color: #000;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.script-text {
+  font-family: 'Sail', cursive;
+  color: #003366;
+  font-weight: 400;
+  font-size: 68px;
+  margin-right: 10px;
+}
+
+/* --- Description Box --- */
+.description-box {
+  background: rgba(255, 255, 255, 0.5); /* Slightly more opaque to read over grid */
+  backdrop-filter: blur(5px);
+  border: 1.5px solid #003366;
+  border-radius: 16px;
+  padding: 30px;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+}
+
+.description-box p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+  margin: 0;
+}
+
+.description-box strong {
+  color: #000;
+  font-weight: 700;
+}
+
+/* --- Mission & Vision Grid --- */
+.mission-vision-grid {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.mv-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mv-title {
+  font-size: 42px;
+  color: #000;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.mv-card {
+  border: 1.5px solid #003366;
+  border-radius: 16px;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+}
+
+.mv-card p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #555;
+  margin: 0;
+  text-align: center;
+}
+
+/* --- Character Image (Bottom Left) --- */
+.character-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 350px;
+  z-index: 3;
+  pointer-events: none; /* Lets clicks pass through if needed */
+}
+
+.character-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .about-title { font-size: 42px; }
+  .script-text { font-size: 50px; }
+  
+  .mission-vision-grid {
+    flex-direction: column;
+    gap: 30px;
+    padding-bottom: 300px;
+  }
+
+  .character-container { width: 200px; }
+  .deco-circle-group { opacity: 0.5; }
+}
