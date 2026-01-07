@@ -1,7 +1,7 @@
 import React from 'react';
 import './hero.css';
 import imgArrow from './assets/arrowgrowth.png';
-import logoZxam from './assets/logozxam.png';
+import videoIntro from './assets/CAT201 SLIDE INTRODUCTION (Video).mp4';
 import imgGoogle from './assets/google.png';
 import imgDell from './assets/dell.png';
 import imgMicrosoft from './assets/microsoft.png'; 
@@ -57,7 +57,7 @@ export default function Hero() {
           <div className="big-circle-container">
              <div className="outer-faded-ring"></div>
              <div className="inner-solid-circle">
-               <img src={logoZxam} alt="zXamSolution Logo" className="zxam-logo" />
+               <video src={videoIntro} alt="CAT201 Introduction Video" className="zxam-logo" autoPlay loop muted controls style={{ borderRadius: '12px' }} />
              </div>
           </div>
         </div>

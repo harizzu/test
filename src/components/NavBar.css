@@ -85,21 +85,37 @@
   font-size: 18px;
   white-space: nowrap;
   font-weight: 500;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .nav-icon {
   width: 18px;
   height: 18px;
   opacity: 0.6;
+  transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effect */
+.nav-item:hover a {
+  color: #003366;
+  text-shadow: 0 2px 8px rgba(0, 51, 102, 0.2);
+}
+
+.nav-item:hover .nav-icon {
+  opacity: 0.9;
+  transform: scale(1.15);
 }
 
 /* Active State */
 .nav-item.active a {
   color: #003366;
   font-weight: 700;
+  text-shadow: 0 3px 10px rgba(0, 51, 102, 0.25);
 }
+
 .nav-item.active .nav-icon {
   opacity: 1;
+  transform: scale(1.2);
   filter: brightness(0) saturate(100%) invert(16%) sepia(38%) saturate(3620%) hue-rotate(200deg) brightness(96%) contrast(104%);
 }
 

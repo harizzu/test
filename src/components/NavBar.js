@@ -23,9 +23,15 @@ const CloseIcon = () => (
 export default function NavBar() {
   // State to toggle the mobile menu
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeNav, setActiveNav] = useState('home');
 
   const toggleMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleNavClick = (navItem) => {
+    setActiveNav(navItem);
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -50,22 +56,22 @@ export default function NavBar() {
       {/* We add the 'mobile-open' class if the state is true */}
       <ul className={`navbar-links ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
         
-        <li className="nav-item active" onClick={() => setIsMobileMenuOpen(false)}>
+        <li className={`nav-item ${activeNav === 'home' ? 'active' : ''}`} onClick={() => handleNavClick('home')}>
           <a href="#home">Home</a>
           <img src="https://img.icons8.com/ios/50/033660/home--v1.png" alt="home" className="nav-icon" />
         </li>
 
-        <li className="nav-item" onClick={() => setIsMobileMenuOpen(false)}>
+        <li className={`nav-item ${activeNav === 'services' ? 'active' : ''}`} onClick={() => handleNavClick('services')}>
           <a href="#services">Services</a>
           <img src="https://img.icons8.com/ios/50/666666/headset.png" alt="services" className="nav-icon" />
         </li>
 
-        <li className="nav-item" onClick={() => setIsMobileMenuOpen(false)}>
+        <li className={`nav-item ${activeNav === 'about' ? 'active' : ''}`} onClick={() => handleNavClick('about')}>
           <a href="#about">About us</a>
           <img src="https://img.icons8.com/ios/50/666666/city.png" alt="about" className="nav-icon" />
         </li>
 
-        <li className="nav-item" onClick={() => setIsMobileMenuOpen(false)}>
+        <li className={`nav-item ${activeNav === 'contact' ? 'active' : ''}`} onClick={() => handleNavClick('contact')}>
           <a href="#contact">Contact</a>
           <img src="https://img.icons8.com/ios/50/666666/user.png" alt="contact" className="nav-icon" />
         </li>
