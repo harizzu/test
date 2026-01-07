@@ -358,24 +358,24 @@
   }
 
   .big-circle-container {
-    width: 380px;
-    height: 380px;
+    width: 550px;
+    height: 550px;
   }
   .inner-solid-circle { 
-    width: 270px; 
-    height: 270px; 
+    width: 400px; 
+    height: 400px; 
   }
   .outer-faded-ring { 
-    width: 380px; 
-    height: 380px; 
+    width: 550px; 
+    height: 550px; 
   }
   .zxam-logo {
-    max-width: 240px;
-    max-height: 240px;
+    max-width: 380px;
+    max-height: 380px;
   }
 
   .hero-visuals {
-    height: 400px;
+    height: 580px;
   }
 }
 
@@ -456,24 +456,24 @@
   }
 
   .big-circle-container {
-    width: 280px;
-    height: 280px;
+    width: 360px;
+    height: 360px;
   }
   .inner-solid-circle { 
-    width: 200px; 
-    height: 200px; 
-  }
-  .outer-faded-ring { 
     width: 280px; 
     height: 280px; 
   }
+  .outer-faded-ring { 
+    width: 360px; 
+    height: 360px; 
+  }
   .zxam-logo {
-    max-width: 180px;
-    max-height: 180px;
+    max-width: 260px;
+    max-height: 260px;
   }
 
   .hero-visuals {
-    height: 320px;
+    height: 420px;
   }
 }
 
