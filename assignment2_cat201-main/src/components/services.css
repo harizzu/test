@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Sail&display=swap');
+
+/* --- Section Container --- */
+.services-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffffff 0%, #f0f7fc 100%);
+  overflow: hidden;
+  font-family: 'Outfit', sans-serif;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* --- Perspective Background Grid --- */
+.services-bg-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(0, 51, 102, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 51, 102, 0.05) 1px, transparent 1px);
+  background-size: 80px 80px;
+  transform: perspective(500px) rotateX(10deg) scale(1.5);
+  transform-origin: center center;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* --- Left Side Circle (Mirrored from Hero) --- */
+.service-circle-container {
+  position: absolute;
+  left: -200px; 
+  top: 50%;
+  transform: translateY(-50%);
+  width: 800px;
+  height: 800px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.service-inner-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 550px;
+  height: 550px;
+  border: 1px solid rgba(0, 51, 102, 0.1); 
+  background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(230,240,250,0.4) 100%);
+  border-radius: 50%;
+}
+
+.service-outer-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  background-color: rgba(176, 203, 226, 0.15); /* Very faint blue */
+}
+
+/* --- Main Content --- */
+.services-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  width: 100%;
+  text-align: center;
+}
+
+/* --- Header Area --- */
+.services-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.service-label-box {
+  background-color: #DAE6F2;
+  color: #003366;
+  font-weight: 700;
+  padding: 8px 24px;
+  border-radius: 6px;
+  border: 2px solid #003366;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 25px;
+}
+
+.services-headline {
+  font-size: 70px;
+  color: #000;
+  line-height: 1.2;
+}
+
+.blue-text {
+  color: #003366;
+}
+
+.script-text {
+  font-family: 'Sail', cursive;
+  font-size: 80px;
+  color: #003366;
+  font-weight: 400;
+}
+
+.header-line {
+  width: 200px;
+  height: 4px;
+  background: #003366;
+  margin-top: 20px;
+  margin-right: auto; /* Aligns line to left relative to header group */
+  opacity: 2;
+  transform: translateX(-150px); /* Manual adjustment to match image line pos */
+}
+
+/* --- Cards Grid --- */
+.cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.6); /* Glassy white */
+  backdrop-filter: blur(10px);
+  border: 2px solid #003366;
+  border-radius: 16px;
+  padding: 30px 20px;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  background: #fff;
+}
+
+.card-icon {
+  margin-bottom: 20px;
+}
+
+.card-icon img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.service-card h3 {
+  color: #003366;
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: 700;
+  text-decoration: underline; 
+  text-underline-offset: 6px;
+  text-decoration-color: rgba(0, 51, 102, 0.3);
+}
+
+.service-card p {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Force the strategy card to break to new line if screen is wide enough */
+.bottom-card {
+  margin-top: 10px;
+}
+
+/* --- Bottom Decorative Line --- */
+.bottom-deco-line {
+  width: 300px;
+  height: 4px;
+  background: #003366;
+  position: absolute;
+  bottom: -40px;
+  right: 0;
+  opacity: 2;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .services-headline {
+    font-size: 36px;
+  }
+  .script-text {
+    font-size: 90px;
+  }
+  .service-circle-container {
+    width: 400px;
+    height: 400px;
+    left: -100px;
+  }
+  .service-inner-circle {
+    width: 300px;
+    height: 300px;
+  }
+  .service-outer-ring {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+/* Mobile 360x800 optimization */
+@media (max-width: 480px) {
+  .services-section {
+    padding: 50px 16px;
+    min-height: auto;
+  }
+
+  .services-container {
+    max-width: 100%;
+  }
+
+  .services-header {
+    margin-bottom: 40px;
+  }
+
+  .service-label-box {
+    font-size: 18px;
+    padding: 6px 16px;
+    margin-bottom: 15px;
+  }
+
+  .services-headline {
+    font-size: 26px;
+    line-height: 1.3;
+    margin-bottom: 15px;
+  }
+
+  .script-text {
+    font-size: 32px;
+  }
+
+  .header-line {
+    width: 150px;
+    height: 3px;
+    margin-top: 15px;
+    transform: translateX(-100px);
+  }
+
+  .cards-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .service-card {
+    width: 100%;
+    max-width: 320px;
+    padding: 24px 16px;
+  }
+
+  .service-card h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .service-card p {
+    font-size: 14px;
+  }
+
+  .card-icon img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .service-circle-container {
+    width: 280px;
+    height: 280px;
+    left: -80px;
+  }
+
+  .service-inner-circle {
+    width: 200px;
+    height: 200px;
+  }
+
+  .service-outer-ring {
+    width: 280px;
+    height: 280px;
+  }
+}

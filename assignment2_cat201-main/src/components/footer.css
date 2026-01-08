@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap');
+
+/* --- Main Container --- */
+.site-footer {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(180deg, #ffffff 0%, #eef6fb 100%); /* Subtle fade at bottom */
+  font-family: 'Outfit', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+}
+
+/* --- Top Blue Line --- */
+.footer-top-divider {
+  width: 90%;
+  max-width: 1200px;
+  height: 2px;
+  background-color: #003366; /* Navy Blue */
+  margin-bottom: 50px;
+}
+
+/* --- Content Wrapper --- */
+.footer-content {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 40px 100px 40px; /* Extra bottom padding for social icons space */
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+/* --- Column 1: Brand & Info --- */
+.footer-brand-col {
+  flex: 1.5; /* Slightly wider than link columns */
+  min-width: 250px;
+}
+
+.footer-logo {
+  font-size: 32px;
+  font-weight: 600; /* 'Solution' weight */
+  color: #000;
+  margin-bottom: 5px;
+}
+
+.brand-blue {
+  color: #003366;
+  font-weight: 700;
+}
+
+.footer-tagline {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.footer-info-block {
+  margin-bottom: 25px;
+}
+
+.info-title {
+  color: #000;
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.footer-info-block p {
+  color: #444;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.email-link {
+  margin-top: 5px;
+}
+
+/* --- Link Columns --- */
+.footer-link-col {
+  flex: 1;
+  min-width: 180px;
+}
+
+.col-header {
+  color: #003366;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.footer-link-col ul {
+  list-style-type: disc; /* Bullet points as seen in image */
+  padding-left: 20px;
+  margin: 0;
+}
+
+.footer-link-col li {
+  color: #555;
+  font-size: 16px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.footer-link-col li:hover {
+  color: #003366;
+}
+
+/* --- Social Icons (Bottom Right Absolute) --- */
+.social-icons-container {
+  position: absolute;
+  bottom: 30px; /* Floats just above the blue bar area */
+  right: 40px;
+  display: flex;
+  gap: 15px;
+}
+
+.social-circle {
+  width: 40px;
+  height: 40px;
+  background-color: #003366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.social-circle:hover {
+  transform: translateY(-3px);
+  background-color: #004080;
+}
+
+.social-circle img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+/* --- Bottom Copyright Bar --- */
+.footer-bottom-bar {
+  width: 100%;
+  background-color: #003366;
+  padding: 15px 0;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer-bottom-bar p {
+  color: #fff;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .footer-content {
+    flex-direction: column;
+    padding-bottom: 80px;
+  }
+  
+  .social-icons-container {
+    position: static; /* Stack naturally on mobile */
+    margin-top: 30px;
+    justify-content: center;
+  }
+  
+  .footer-brand-col, .footer-link-col {
+    width: 100%;
+    text-align: left; /* Keep left align like image */
+  }
+}
