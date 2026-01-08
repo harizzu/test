@@ -190,6 +190,13 @@
 
 /* --- Responsive --- */
 @media (max-width: 900px) {
+<<<<<<< HEAD
+=======
+  .services-section {
+    margin-left: -15px;
+  }
+
+>>>>>>> f1a88c5 (test final)
   .services-headline {
     font-size: 36px;
   }

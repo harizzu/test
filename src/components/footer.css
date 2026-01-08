@@ -25,7 +25,11 @@
 .footer-content {
   width: 100%;
   max-width: 1200px;
+<<<<<<< HEAD
   padding: 0 40px 100px 40px; /* Extra bottom padding for social icons space */
+=======
+  padding: 0 40px 100px 60px; /* Extra bottom padding for social icons space */
+>>>>>>> f1a88c5 (test final)
   display: flex;
   justify-content: space-between;
   position: relative;

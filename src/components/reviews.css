@@ -12,6 +12,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+<<<<<<< HEAD
+=======
+  margin-left: -15px;
+>>>>>>> f1a88c5 (test final)
 }
 
 /* --- Perspective Background Grid --- */

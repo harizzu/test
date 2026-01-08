@@ -383,6 +383,10 @@
 @media (max-width: 480px) {
   .hero-section {
     min-height: 100vh;
+<<<<<<< HEAD
+=======
+    margin-left: -15px;
+>>>>>>> f1a88c5 (test final)
   }
 
   .hero-container {
@@ -456,6 +460,7 @@
   }
 
   .big-circle-container {
+<<<<<<< HEAD
     width: 360px;
     height: 360px;
   }
@@ -474,6 +479,26 @@
 
   .hero-visuals {
     height: 420px;
+=======
+    width: 380px;
+    height: 380px;
+  }
+  .inner-solid-circle { 
+    width: 310px; 
+    height: 310px; 
+  }
+  .outer-faded-ring { 
+    width: 380px; 
+    height: 380px; 
+  }
+  .zxam-logo {
+    max-width: 290px;
+    max-height: 290px;
+  }
+
+  .hero-visuals {
+    height: 440px;
+>>>>>>> f1a88c5 (test final)
   }
 }
 

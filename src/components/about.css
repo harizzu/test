@@ -12,6 +12,10 @@
   padding: 60px 20px 0;
   display: flex;
   justify-content: center;
+<<<<<<< HEAD
+=======
+  margin-left: -15px;
+>>>>>>> f1a88c5 (test final)
 }
 
 /* --- FIX: The Vector Grid (Now Tilted correctly) --- */
